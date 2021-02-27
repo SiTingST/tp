@@ -56,9 +56,9 @@ class JsonAdaptedPerson {
     }
 
     public JsonAdaptedPerson(String invalidName, String validPhone, String validEmail, List<JsonAdaptedTag> validTags) {
-            this.name = invalidName;
-            this.phone = validPhone;
-            this.email = validEmail;
+        this.name = invalidName;
+        this.phone = validPhone;
+        this.email = validEmail;
     }
 
     /**
@@ -95,7 +95,6 @@ class JsonAdaptedPerson {
             throw new IllegalValueException(Email.MESSAGE_CONSTRAINTS);
         }
         final Email modelEmail = new Email(email);
-
 
         final Set<Tag> modelTags = new HashSet<>(personTags);
         return new Person(modelName, modelPhone, modelEmail, modelTags);
