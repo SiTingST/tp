@@ -55,6 +55,12 @@ class JsonAdaptedPerson {
                 .collect(Collectors.toList()));
     }
 
+    public JsonAdaptedPerson(String invalidName, String validPhone, String validEmail, List<JsonAdaptedTag> validTags) {
+            this.name = invalidName;
+            this.phone = validPhone;
+            this.email = validEmail;
+    }
+
     /**
      * Converts this Jackson-friendly adapted person object into the model's {@code Person} object.
      *
