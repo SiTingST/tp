@@ -1,7 +1,10 @@
 package seedu.student.model.util;
 
+import seedu.student.model.AppointmentBook;
+import seedu.student.model.ReadOnlyAppointmentBook;
 import seedu.student.model.ReadOnlyStudentBook;
 import seedu.student.model.StudentBook;
+import seedu.student.model.appointment.Appointment;
 import seedu.student.model.student.Address;
 import seedu.student.model.student.Email;
 import seedu.student.model.student.Faculty;
@@ -12,6 +15,9 @@ import seedu.student.model.student.Phone;
 import seedu.student.model.student.SchoolResidence;
 import seedu.student.model.student.Student;
 import seedu.student.model.student.VaccinationStatus;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 /**
  * Contains utility methods for populating {@code AddressBook} with sample data.
@@ -48,11 +54,26 @@ public class SampleDataUtil {
         };
     }
 
+    public static Appointment[] getSampleAppointment() {
+        return new Appointment[] {
+            new Appointment(new MatriculationNumber("A0389487X"), LocalDate.parse("2021-01-01"),
+                    LocalTime.parse("11:00"), LocalTime.parse("11:30"))
+        };
+    }
+
     public static ReadOnlyStudentBook getSampleStudentBook() {
-        StudentBook sampleAb = new StudentBook();
+        StudentBook sampleStudentBook = new StudentBook();
         for (Student sampleStudent : getSampleStudents()) {
-            sampleAb.addStudent(sampleStudent);
+            sampleStudentBook.addStudent(sampleStudent);
         }
-        return sampleAb;
+        return sampleStudentBook;
+    }
+
+    public static ReadOnlyAppointmentBook getSampleAppointmentBook() {
+        AppointmentBook sampleAppointmentBook = new AppointmentBook();
+        for (Appointment sampleAppointment : getSampleAppointment()) {
+            sampleAppointmentBook.addAppointment(sampleAppointment);
+        }
+        return sampleAppointmentBook;
     }
 }
