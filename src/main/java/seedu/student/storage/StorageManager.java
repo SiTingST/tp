@@ -7,9 +7,8 @@ import java.util.logging.Logger;
 
 import seedu.student.commons.core.LogsCenter;
 import seedu.student.commons.exceptions.DataConversionException;
-import seedu.student.model.ReadOnlyStudentBook;
-import seedu.student.model.ReadOnlyUserPrefs;
-import seedu.student.model.UserPrefs;
+import seedu.student.model.*;
+import seedu.student.storage.appointment.AppointmentBookStorage;
 
 /**
  * Manages storage of StudentBook data in local storage.
@@ -18,6 +17,8 @@ public class StorageManager implements Storage {
 
     private static final Logger logger = LogsCenter.getLogger(StorageManager.class);
     private StudentBookStorage studentBookStorage;
+    private AppointmentBookStorage appointmentBookStorage;
+
     private UserPrefsStorage userPrefsStorage;
 
     /**
@@ -76,4 +77,33 @@ public class StorageManager implements Storage {
         studentBookStorage.saveStudentBook(studentBook, filePath);
     }
 
+
+    @Override
+    public Path getAppointmentBookFilePath() {
+        return appointmentBookStorage.getAppointmentBookFilePath();
+
+    }
+
+    @Override
+    public Optional<ReadOnlyAppointmentBook> readAppointmentBook() throws DataConversionException, IOException {
+        return readAppointmentBook(appointmentBookStorage.getAppointmentBookFilePath());
+
+    }
+
+    @Override
+    public Optional<ReadOnlyAppointmentBook> readAppointmentBook(Path filePath) throws DataConversionException, IOException {
+        logger.fine("Attempting to read data from file: " + filePath);
+        return appointmentBookStorage.readAppointmentBook(filePath);    }
+
+    @Override
+    public void saveAppointmentBook(ReadOnlyAppointmentBook appointmentBook) throws IOException {
+        saveAppointmentBook(appointmentBook, appointmentBookStorage.getAppointmentBookFilePath());
+
+    }
+
+    @Override
+    public void saveAppointmentBook(ReadOnlyAppointmentBook appointmentBook, Path filePath) throws IOException {
+        logger.fine("Attempting to write to data file: " + filePath);
+        appointmentBookStorage.saveAppointmentBook(appointmentBook, filePath);
+    }
 }

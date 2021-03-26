@@ -49,7 +49,7 @@ public class StudentBook implements ReadOnlyStudentBook {
     }
 
     /**
-     * Resets the existing data of this {@code AddressBook} with {@code newData}.
+     * Resets the existing data of this {@code s} with {@code newData}.
      */
     public void resetData(ReadOnlyStudentBook newData) {
         requireNonNull(newData);

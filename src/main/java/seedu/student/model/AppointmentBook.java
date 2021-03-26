@@ -5,6 +5,8 @@ import seedu.student.model.appointment.Appointment;
 import seedu.student.model.appointment.SameDateAppointmentList;
 import seedu.student.model.appointment.UniqueAppointmentList;
 
+import java.util.List;
+
 import static java.util.Objects.requireNonNull;
 
 public class AppointmentBook implements ReadOnlyAppointmentBook {
@@ -25,16 +27,22 @@ public class AppointmentBook implements ReadOnlyAppointmentBook {
         resetData(toBeCopied);
     }
 
+    /**
+     * Replaces the contents of the appointment list with {@code appointments}.
+     * {@code students} must not contain overlapping appointments.
+     */
+    public void setAppointments(List<SameDateAppointmentList> appointments) {
+        this.appointments.setAppointments(appointments);
+    }
+
+    /**
+     * Resets the existing data of this {@code AppointmentBook} with {@code newData}.
+     */
     public void resetData(ReadOnlyAppointmentBook newData) {
         requireNonNull(newData);
 
         setAppointments(newData.getAppointmentList());
-
     }
-
-    private void setAppointments(ObservableList<SameDateAppointmentList> appointmentList) {
-    }
-
 
     //// appointment-level operations
 

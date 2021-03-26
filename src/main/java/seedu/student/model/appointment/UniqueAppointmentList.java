@@ -1,11 +1,16 @@
 package seedu.student.model.appointment;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.student.commons.util.CollectionUtil.requireAllNonNull;
 
 import java.util.Iterator;
+import java.util.List;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import seedu.student.model.student.Student;
+import seedu.student.model.student.UniqueStudentList;
+import seedu.student.model.student.exceptions.DuplicateStudentException;
 
 /**
  * TO EDIT
@@ -69,6 +74,21 @@ public class UniqueAppointmentList implements Iterable<SameDateAppointmentList> 
     }
 
     /**
+     * Replaces the contents of this list with {@code students}.
+     * {@code students} must not contain duplicate students.
+     */
+    public void setAppointments(List<SameDateAppointmentList> appointments) {
+        requireAllNonNull(appointments);
+       /* if (!studentsAreUnique(appointments)) {
+            throw new DuplicateStudentException();
+        }
+
+        internalList.setAll(students);
+
+        */
+    }
+
+    /**
      * Removes the equivalent appointment from the list.
      * The appointment must exist in the list.
      */
@@ -99,4 +119,6 @@ public class UniqueAppointmentList implements Iterable<SameDateAppointmentList> 
     public int hashCode() {
         return internalList.hashCode();
     }
+
+
 }
