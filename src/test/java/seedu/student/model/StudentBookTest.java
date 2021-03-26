@@ -99,10 +99,11 @@ public class StudentBookTest {
             return students;
         }
 
-        @Override
-        public ObservableList<SameDateAppointmentList> getAppointmentList() {
+       /* @Override
+       public ObservableList<SameDateAppointmentList> getAppointmentList() {
             return appointments;
         }
+        */
     }
 
 }

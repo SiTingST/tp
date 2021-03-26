@@ -22,6 +22,8 @@ public class ModelManager implements Model {
     private static final Logger logger = LogsCenter.getLogger(ModelManager.class);
 
     private final StudentBook studentBook;
+    private final AppointmentBook appointmentBook;
+
     private final UserPrefs userPrefs;
     private final FilteredList<Student> filteredStudents;
     private final FilteredList<SameDateAppointmentList> filteredAppointments;
@@ -29,20 +31,22 @@ public class ModelManager implements Model {
     /**
      * Initializes a ModelManager with the given studentBook and userPrefs.
      */
-    public ModelManager(ReadOnlyStudentBook studentBook, ReadOnlyUserPrefs userPrefs) {
+    public ModelManager(ReadOnlyStudentBook studentBook,ReadOnlyAppointmentBook appointmentBook,
+                        ReadOnlyUserPrefs userPrefs) {
         super();
         requireAllNonNull(studentBook, userPrefs);
 
-        logger.fine("Initializing with address book: " + studentBook + " and user prefs " + userPrefs);
+        logger.fine("Initializing with student book: " + studentBook + " and user prefs " + userPrefs);
 
         this.studentBook = new StudentBook(studentBook);
+        this.appointmentBook = new AppointmentBook(appointmentBook);
         this.userPrefs = new UserPrefs(userPrefs);
         filteredStudents = new FilteredList<>(this.studentBook.getStudentList());
-        filteredAppointments = new FilteredList<>(this.studentBook.getAppointmentList());
+        filteredAppointments = new FilteredList<>(this.appointmentBook.getAppointmentList());
     }
 
     public ModelManager() {
-        this(new StudentBook(), new UserPrefs());
+        this(new StudentBook(), new AppointmentBook(), new UserPrefs());
     }
 
     //=========== UserPrefs ==================================================================================
@@ -88,6 +92,11 @@ public class ModelManager implements Model {
     }
 
     @Override
+    public void setAppointmentBook(ReadOnlyAppointmentBook setAppointmentBook) {
+
+    }
+
+    @Override
     public ReadOnlyStudentBook getStudentBook() {
         return studentBook;
     }
@@ -119,18 +128,18 @@ public class ModelManager implements Model {
     @Override
     public boolean hasAppointment(Appointment appointment) {
         requireNonNull(appointment);
-        return studentBook.hasAppointment(appointment);
+        return appointmentBook.hasAppointment(appointment);
     }
 
     @Override
     public boolean hasOverlappingAppointment(Appointment appointment) {
         requireNonNull(appointment);
-        return studentBook.hasOverlappingAppointment(appointment);
+        return appointmentBook.hasOverlappingAppointment(appointment);
     }
 
     @Override
     public void addAppointment(Appointment appointment) {
-        studentBook.addAppointment(appointment);
+        appointmentBook.addAppointment(appointment);
     }
 
     //=========== Filtered Student List Accessors =============================================================

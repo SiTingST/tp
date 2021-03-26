@@ -1,17 +1,12 @@
 package seedu.student.model;
 
 import javafx.collections.ObservableList;
-import seedu.student.model.student.Student;
+import seedu.student.model.appointment.SameDateAppointmentList;
 
-/**
- * Unmodifiable view of a studentbook
- */
-public interface ReadOnlyStudentBook {
-
+public interface ReadOnlyAppointmentBook {
     /**
      * Returns an unmodifiable view of the students list.
      * This list will not contain any duplicate students.
      */
-    ObservableList<Student> getStudentList();
-
+    ObservableList<SameDateAppointmentList> getAppointmentList();
 }

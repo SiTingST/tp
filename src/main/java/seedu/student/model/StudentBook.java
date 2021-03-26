@@ -5,9 +5,7 @@ import static java.util.Objects.requireNonNull;
 import java.util.List;
 
 import javafx.collections.ObservableList;
-import seedu.student.model.appointment.Appointment;
-import seedu.student.model.appointment.SameDateAppointmentList;
-import seedu.student.model.appointment.UniqueAppointmentList;
+
 import seedu.student.model.student.Student;
 import seedu.student.model.student.UniqueStudentList;
 
@@ -18,7 +16,6 @@ import seedu.student.model.student.UniqueStudentList;
 public class StudentBook implements ReadOnlyStudentBook {
 
     private final UniqueStudentList students;
-    private final UniqueAppointmentList appointments;
 
     /*
      * The 'unusual' code block below is a non-static initialization block, sometimes used to avoid duplication
@@ -29,13 +26,12 @@ public class StudentBook implements ReadOnlyStudentBook {
      */
     {
         students = new UniqueStudentList();
-        appointments = new UniqueAppointmentList();
     }
 
     public StudentBook() {}
 
     /**
-     * Creates an AddressBook using the Students in the {@code toBeCopied}
+     * Creates a StudentBook using the Students in the {@code toBeCopied}
      */
     public StudentBook(ReadOnlyStudentBook toBeCopied) {
         this();
@@ -100,45 +96,6 @@ public class StudentBook implements ReadOnlyStudentBook {
         students.remove(key);
     }
 
-
-    //// appointment-level operations
-
-    /**
-     * Returns true if an appointment with the same identity as {@code appointment} exists in the address book.
-     */
-    public boolean hasAppointment(Appointment appointment) {
-        requireNonNull(appointment);
-        return appointments.contains(appointment);
-    }
-
-    /**
-     * Returns true if an appointment with overlapping time with {@code appointment} exists in the address book.
-     */
-    public boolean hasOverlappingAppointment(Appointment appointment) {
-        requireNonNull(appointment);
-        return appointments.hasOverlappingAppointment(appointment);
-    }
-
-    /**
-     * Adds an appointment to the address book.
-     * The appointment must not already exist in the address book.
-     */
-    public void addAppointment(Appointment a) {
-        appointments.add(a);
-    }
-
-    /**
-     * Replaces the given appointment {@code target} in the list with {@code editedAppointment}.
-     * {@code target} must exist in the address book.
-     * The appointment identity of {@code editedAppointment} must not be the same as another existing
-     * appointment in the address book.
-     */
-    public void setAppointment(Appointment target, Appointment editedAppointment) {
-        requireNonNull(editedAppointment);
-
-        appointments.setAppointment(target, editedAppointment);
-    }
-
     //// util methods
 
     @Override
@@ -150,11 +107,6 @@ public class StudentBook implements ReadOnlyStudentBook {
     @Override
     public ObservableList<Student> getStudentList() {
         return students.asUnmodifiableObservableList();
-    }
-
-    @Override
-    public ObservableList<SameDateAppointmentList> getAppointmentList() {
-        return appointments.asUnmodifiableObservableList();
     }
 
     @Override

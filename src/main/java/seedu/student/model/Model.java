@@ -47,9 +47,14 @@ public interface Model {
     void setStudentBookFilePath(Path studentBookFilePath);
 
     /**
-     * Replaces address book data with the data in {@code studentBook}.
+     * Replaces student book data with the data in {@code studentBook}.
      */
     void setStudentBook(ReadOnlyStudentBook studentBook);
+
+    /**
+     * Replaces address book data with the data in {@code appointmentBook}.
+     */
+    void setAppointmentBook(ReadOnlyAppointmentBook setAppointmentBook);
 
     /** Returns the studentBook */
     ReadOnlyStudentBook getStudentBook();
