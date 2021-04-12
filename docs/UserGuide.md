@@ -109,7 +109,6 @@ Examples:
 | ------------- |
 |![editAfter](images/editAfter.png)|
 
-
 ### Deleting a student record: `delete`
 
 Deletes the student specified by his/her matriculation number from Vax@NUS records.
@@ -132,7 +131,6 @@ Examples:
 | After        | 
 | ------------- |
 |![deleteAfter](images/deleteAfter.png)|
-
 ### Filtering all student records: `filter`
 
 Shows all student records in Vax@NUS that matches the specified vaccination status, faculty or school residence.
@@ -155,7 +153,6 @@ Examples:
 * `filter RVRC` 
 
 ![filter](images/filter.png)
-
 ### Viewing statistics for student population: `stats`
 
 Displays percentage of vaccinated students in the specified faculty/school residence, whole of NUS, or a list of percentages of vaccinated students in every Faculty and School Residence. 
@@ -186,7 +183,6 @@ Sample Output for `stats all`:
 
 Sample Output for `stats PGPH`:
 ![StatsResidence](images/statsResidence.png)
-
 ### Adding an appointment: `addAppt`
 
 Adds an appointment to Vax@NUS' records. 
@@ -208,7 +204,6 @@ Examples:
 | After        | 
 | ------------- |
 |![AddApptAfter](images/AddApptAfter.png)|
-
 ### Editing an appointment: `editAppt`
 
 Edits an appointment present in Vax@NUS records by referencing the student's matriculation number. 
@@ -228,7 +223,6 @@ Examples:
 | After        | 
 | ------------- |
 |![editApptAfter](images/editApptAfter.png)|
-
 ### Deleting an appointment: `deleteAppt`
 
 Deletes the appointment of the student with the specified matriculation number from Vax@NUS' records. 
@@ -248,7 +242,6 @@ Examples:
 | After        | 
 | ------------- |
 |![DeleteApptAfter](images/deleteApptAfter.png)|
-
 ### Viewing statistics for appointments: `statsAppt`
 Displays the number of upcoming and previous appointments within 1 week from the current day, including the current day.
 E.g., if today is Monday, `statsAppt` will count upcoming appointments from Monday(Today) - Sunday and past appointments from last Tuesday - Monday(Today).
@@ -259,13 +252,11 @@ Format: <br>
 Sample Output for `statsAppt`:
 ![StatsAppt](images/statsAppt.png)
 > Remark: Screenshot was taken on 9 April 2021.
-
 ### Listing all data : `list`
 
 Shows a list of all students and all appointments in Vax@NUS records.
 
 Format: `list`
-
 ### Finding a student and their appointment : `find`
 
 Shows personal information, including appointment details if present, of the student that matches the specified matriculation number.
@@ -280,12 +271,10 @@ Examples:
 * `find A1234567X` shows John Doe's personal information, and his appointment details if it is present.
 
 ![Find](images/find.png)
-
 ### Viewing help : `help`
 
 Display a pop-up window showing a list of commonly used commands in Vax@NUS and a link to our User Guide. 
 Format: `help`
-
 ### Clearing all data : `clear`
 
 Clearing all the data from Vax@NUS.
@@ -297,13 +286,11 @@ Format: `clear`
 Exits the program.
 
 Format: `exit`
-
 ### Saving the data
 
 Vax@NUS saves your current data into your computer automatically after any command. There is no need to save manually.
  
  :information_source: **NOTE:**  Vax@NUS will display our sample data file if no data file is found from your computer.
-
 ### Editing the data
 
 Vax@NUS data is saved as a JSON file [JAR file location]/data/studentbook.json. Advanced users are welcome to update data directly by editing that data file.
@@ -318,15 +305,12 @@ Failure to do so will result in an invalid data file format as the appointment d
 > :warning: If your direct changes to the data file result in invalid data formatting, Vax@NUS will discard all data and start with an empty data file in your next launch. Be very careful!
 
 >--------------------------------------------------------------------------------------------------------------------
-
 ## Input Formats
 
 The following parameter formats must be followed:
-
 ### Matriculation Number
  The `MATRICULATION_NUMBER` of a student is a unique 9-character alphanumeric sequence that begins with A, followed by
  7 numbers and ends with an alphabet.
-
 ### Faculty
 
  The `FACULTY` of a student must be one of the following(case-sensitive):
@@ -347,11 +331,9 @@ The following parameter formats must be followed:
  * SCI (for Faculty of Science)
  * USP (for University Scholars Programme)
  * YNC (for Yale-NUS College)
-
 ### Vaccination Status
 
  The `VACCINATION_STATUS` of a student must only be `vaccinated` or `unvaccinated`. It is not case-sensitive. 
-
 ### School Residence
 
  The `[SCHOOL_RESIDENCE]` of a student must be one of the following(case-sensitive):
@@ -373,7 +355,6 @@ The following parameter formats must be followed:
  * DOES_NOT_LIVE_ON_CAMPUS
 
 If unindicated, the `School Residence` field will default to `DOES NOT LIVE ON CAMPUS`
-
 ### Conditions for valid appointments
 * `DATE` must be of the format `YYYY-MM-DD`
 * `START_TIME` must be of the format `HH:00` or `HH:30`.
