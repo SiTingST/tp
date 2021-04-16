@@ -281,7 +281,6 @@ Format: `addAppt MATRICULATION_NUMBER d/DATE ts/START_TIME`
 
 Examples:
 1. Enter `addAppt A1234567X d/2021-12-13 ts/13:00` into the command box to add an appointment for John Doe.
-
 ![AddApptBefore](images/AddApptBefore.png)
 
 2. The new appointment will be added to the end of the appointment list and into Vax@NUS record.
@@ -296,7 +295,6 @@ Format: `editAppt MATRICULATION_NUMBER d/DATE ts/START_TIME`
 Examples:
 
 1. Enter `editAppt A1234567X d/2021-11-13 ts/14:00` into the command box to change John Doe's appointment time from 1pm to 2pm.
-
 ![editApptBefore](images/editApptBefore.png)
 
 2. The appointment list will display and reflect the latest change.
