@@ -169,10 +169,9 @@ Example:
 To add a new student,
  
  1. Enter the input  `add A1234567X n/John Doe f/COM p/98765432 e/johnd@example.com a/John street, block 123, #01-01 s/vaccinated m/peanut allergy r/RVRC` into the command box.
-
 ![AddStudentBefore](images/addStudentBefore.png)
 
- 2. The new student will be added at the bottom of the list and into Vax@NUS' record. 
+ 2. The new student will be added at the bottom of the list and into Vax@NUS record. 
 ![AddStudentAfter](images/addStudentAfter.png)
 
 #### Editing a student record: `edit`
@@ -191,12 +190,10 @@ All inputs specified are optional, but at least one of them must be provided. Af
 
 Examples:
 
-1. Suppose, John Doe has just changed his course and is currently studying in the Faculty of Engineering. Simply enter the command `edit 7 r/ENG` into the command box to edit his faculty. 
-
+1. Suppose, John Doe has just changed his course and is currently studying in the Faculty of Engineering. Simply enter the command `edit 7 r/ENG` into the command box to edit his faculty.
 ![editBefore](images/editBefore.png)
 
-2. John Doe's particulars will be updated and the new information will be displayed in the list of student records.  
-
+2. John Doe's particulars will be updated and the new information will be displayed in the list of student records.
 ![editAfter](images/editAfter.png)
 
 
@@ -213,11 +210,9 @@ Format: `delete MATRICULATION NUMBER`
 Examples:
 
 1. Suppose, you want to delete John Doe from Vax@NUS records. You can enter `delete A1234567X` into the command box. John Doe and his corresponding appointment will be deleted.
-
 ![deleteBefore](images/deleteBefore.png)
 
-2. Upon deletion, the list of student records will be updated accordingly. 
-
+2. Upon deletion, the list of student records will be updated accordingly.
 ![deleteAfter](images/deleteAfter.png)
 
 #### Filtering all student records: `filter`
@@ -276,7 +271,7 @@ Examples:
 
 #### Adding an appointment: `addAppt`
 
-Adds an appointment to Vax@NUS' records.
+Adds an appointment to Vax@NUS records.
 
 The current version of Vax@NUS allows no more than one appointment scheduled for each student. You thus will not be able to add a new appointment for a student if they already have one.
 
@@ -289,7 +284,7 @@ Examples:
 
 ![AddApptBefore](images/AddApptBefore.png)
 
-2. The new appointment will be added to the end of the appointment list and into Vax@NUS' record.
+2. The new appointment will be added to the end of the appointment list and into Vax@NUS record.
 ![AddApptAfter](images/AddApptAfter.png)
 
 #### Editing an appointment: `editAppt`
@@ -309,7 +304,7 @@ Examples:
 
 #### Deleting an appointment: `deleteAppt`
 
-Deletes the appointment of the student with the specified matriculation number from Vax@NUS' records. 
+Deletes the appointment of the student with the specified matriculation number from Vax@NUS records. 
 
 Format: `deleteAppt MATRICULATION_NUMBER`
 
@@ -318,11 +313,9 @@ Format: `deleteAppt MATRICULATION_NUMBER`
 
 Examples:
 1.  Enter `deleteAppt A1234567X` into the command box to delete John Doe's appointments from the records, provided he had an appointment scheduled previously.
-
 ![DeleteApptBefore](images/deleteApptBefore.png)
 
-2. The list of appointments will be updated accordingly after the appointment deletion.  
-
+2. The list of appointments will be updated accordingly after the appointment deletion.
 ![DeleteApptAfter](images/deleteApptAfter.png)
 
 #### Viewing statistics for appointments: `statsAppt`
@@ -435,7 +428,7 @@ If unindicated, the `School Residence` field will default to `DOES NOT LIVE ON C
 
 **Q**: Why are vaccinated students able to receive new appointments?
 <br>
-**A**: Beyond the two shots currently required for the approved Pfizer-BioNTech and Moderna vaccines in Singapore, booster shots could be required in the future to prolong immunity and provide protection against fast-emerging COVID-19 variants. 
+**A**: A student can schedule a new appointment should they experience severe side effects due to the vaccination. Moreover, booster shots could be required in the future to prolong immunity and provide protection against fast-emerging COVID-19 variants. 
 
 **Q**: How long is a vaccination appointment?
 <br>
