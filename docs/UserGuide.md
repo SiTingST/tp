@@ -76,13 +76,13 @@ This section aims to help you to navigate the user guide.
    * `delete A1234567X`** <br>
     Deletes the information for John Doe, identified by his matriculation number, from the student records. Note that since
      John Doe also has a vaccination appointment created, the appointment will also be deleted. 
-
+<br>
 1. Refer to the [Features](#features) section below for details of each command.
+   
 1. When you are ready, you can remove all sample data with the `clear` command and begin adding real data. 
 
 
 --------------------------------------------------------------------------------------------------------------------
-
 ## Features
 
 <div markdown="block" class="alert alert-info">
