@@ -78,7 +78,8 @@ This section aims to help you to navigate the user guide.
      John Doe also has a vaccination appointment created, the appointment will also be deleted. 
 <br>
 1. Refer to the [Features](#features) section below for details of each command.<br>
-1. Refer to the [Features](#features) section below for details of each command.
+
+3. When you are ready, you can remove all sample data with the clear command and begin adding real data.
 
 --------------------------------------------------------------------------------------------------------------------
 ## Features
